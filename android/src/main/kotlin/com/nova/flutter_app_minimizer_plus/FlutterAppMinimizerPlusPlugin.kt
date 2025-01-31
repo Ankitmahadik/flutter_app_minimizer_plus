@@ -1,6 +1,7 @@
 package com.nova.flutter_app_minimizer_plus
 
 import android.app.Activity
+import android.os.Build
 import androidx.annotation.NonNull
 import io.flutter.embedding.engine.plugins.FlutterPlugin
 import io.flutter.embedding.engine.plugins.activity.ActivityAware
@@ -18,20 +19,15 @@ class FlutterAppMinimizerPlusPlugin : FlutterPlugin, MethodCallHandler, Activity
         channel = MethodChannel(flutterPluginBinding.binaryMessenger, "flutter_app_minimizer_plus")
         channel.setMethodCallHandler(this)
     }
-    override fun onMethodCall(call: MethodCall, result: MethodChannel.Result) {
-        when (call.method) {
-            "getPlatformVersion" -> {
-                val version = Build.VERSION.RELEASE
-                result.success(version)
-            }
-            else -> result.notImplemented()
-        }
-    }
     override fun onMethodCall(@NonNull call: MethodCall, @NonNull result: Result) {
         when (call.method) {
             "minimizeApp" -> {
                 activity?.moveTaskToBack(true)
                 result.success(null)
+            }
+            "getPlatformVersion" -> {
+                val version = Build.VERSION.RELEASE
+                result.success(version)
             }
             else -> {
                 result.notImplemented()

@@ -2,7 +2,7 @@
 
 All notable changes to the `flutter_app_minimizer_plus` plugin will be documented in this file.
 
-## [1.0.0] - Initial Release (2025-1-31)
+## [1.0.0] - Initial Release
 
 ### Added
 - Initial release of the `flutter_app_minimizer_plus` plugin.
@@ -18,7 +18,7 @@ All notable changes to the `flutter_app_minimizer_plus` plugin will be documente
 
 ---
 
-## [1.0.1] - SDK Constraint Update (2025-2-15)
+## [1.0.1] - SDK Constraint Update
 
 ### Changed
 - Updated Dart SDK constraint in `pubspec.yaml` from `^3.5.1` to `>=3.2.1 <4.0.0` to support a wider range of Dart SDK versions.
@@ -29,3 +29,18 @@ All notable changes to the `flutter_app_minimizer_plus` plugin will be documente
 
 ### Added
 - N/A
+
+---
+
+## [1.0.2] - Bug Fixes & Compatibility Improvements
+
+### Fixed
+- Resolved conflicting `onMethodCall` overloads in `FlutterAppMinimizerPlusPlugin.kt`, preventing Kotlin compilation issues.
+- Fixed unresolved reference to `Build` in `FlutterAppMinimizerPlusPlugin.kt` by properly importing `android.os.Build`.
+
+### Changed
+- Improved error handling for method calls to ensure stability.
+- Updated Kotlin dependencies in `android/build.gradle` for better compatibility.
+
+### Added
+- Additional logging for debugging method call errors.
