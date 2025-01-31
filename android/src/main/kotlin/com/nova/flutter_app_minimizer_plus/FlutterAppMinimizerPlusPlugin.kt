@@ -18,7 +18,15 @@ class FlutterAppMinimizerPlusPlugin : FlutterPlugin, MethodCallHandler, Activity
         channel = MethodChannel(flutterPluginBinding.binaryMessenger, "flutter_app_minimizer_plus")
         channel.setMethodCallHandler(this)
     }
-
+    override fun onMethodCall(call: MethodCall, result: MethodChannel.Result) {
+        when (call.method) {
+            "getPlatformVersion" -> {
+                val version = Build.VERSION.RELEASE
+                result.success(version)
+            }
+            else -> result.notImplemented()
+        }
+    }
     override fun onMethodCall(@NonNull call: MethodCall, @NonNull result: Result) {
         when (call.method) {
             "minimizeApp" -> {

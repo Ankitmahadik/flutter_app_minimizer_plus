@@ -15,4 +15,18 @@ class FlutterAppMinimizerPlus {
       }
     }
   }
+
+  Future<String?> getPlatformVersion() async {
+    try {
+      // Invoke the platform-specific method to get the platform version
+      final String? version = await _channel.invokeMethod('getPlatformVersion');
+      return version;
+    } catch (e) {
+      // Handle any errors (e.g., platform not supported)
+      if (kDebugMode) {
+        print('Failed to get platform version: $e');
+      }
+      return null;
+    }
+  }
 }
