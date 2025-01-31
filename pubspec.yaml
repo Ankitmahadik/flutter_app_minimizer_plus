@@ -1,11 +1,11 @@
 name: flutter_app_minimizer_plus
 description: A Flutter plugin to minimize the app and move it to the background on Android.
-version: 1.0.0
+version: 1.0.1
 homepage: https://github.com/Ankitmahadik/flutter_app_minimizer_plus
 repository: https://github.com/Ankitmahadik/flutter_app_minimizer_plus
 
 environment:
-  sdk: ^3.5.4
+  sdk: '>=3.2.1 <4.0.0'
   flutter: '>=3.3.0'
 
 dependencies:
