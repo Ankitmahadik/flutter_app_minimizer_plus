@@ -44,3 +44,15 @@ All notable changes to the `flutter_app_minimizer_plus` plugin will be documente
 
 ### Added
 - Additional logging for debugging method call errors.
+
+---
+
+## [1.0.3-dev.1] - 2026-07-15
+
+### Changed
+- Published a dev prerelease for testing the built-in Kotlin migration on pub.dev.
+- Migrated the plugin and example app Android Gradle setup to use built-in Kotlin for Flutter 3.44+ compatibility.
+- Raised the minimum supported Flutter and Dart SDK versions to align with the built-in Kotlin migration guidance.
+- Updated the example app to AGP 9.0.1 and Gradle 9.1.0 so built-in Kotlin is enabled without applying KGP.
+- Kept the AGP old-DSL opt-out for Flutter Gradle plugin compatibility while Flutter's AGP 9 support finishes migrating.
+- Kept the AGP unique-package-name opt-out for older AndroidX test artifacts in the example debug build.
