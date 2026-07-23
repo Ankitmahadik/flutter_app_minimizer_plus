@@ -7,21 +7,28 @@ import 'package:plugin_platform_interface/plugin_platform_interface.dart';
 class MockFlutterAppMinimizerPlusPlatform
     with MockPlatformInterfaceMixin
     implements FlutterAppMinimizerPlusPlatform {
-
   @override
   Future<String?> getPlatformVersion() => Future.value('42');
 }
 
 void main() {
-  final FlutterAppMinimizerPlusPlatform initialPlatform = FlutterAppMinimizerPlusPlatform.instance;
+  TestWidgetsFlutterBinding.ensureInitialized();
+
+  final FlutterAppMinimizerPlusPlatform initialPlatform =
+      FlutterAppMinimizerPlusPlatform.instance;
 
   test('$MethodChannelFlutterAppMinimizerPlus is the default instance', () {
-    expect(initialPlatform, isInstanceOf<MethodChannelFlutterAppMinimizerPlus>());
+    expect(
+      initialPlatform,
+      isInstanceOf<MethodChannelFlutterAppMinimizerPlus>(),
+    );
   });
 
   test('getPlatformVersion', () async {
-    FlutterAppMinimizerPlus flutterAppMinimizerPlusPlugin = FlutterAppMinimizerPlus();
-    MockFlutterAppMinimizerPlusPlatform fakePlatform = MockFlutterAppMinimizerPlusPlatform();
+    FlutterAppMinimizerPlus flutterAppMinimizerPlusPlugin =
+        FlutterAppMinimizerPlus();
+    MockFlutterAppMinimizerPlusPlatform fakePlatform =
+        MockFlutterAppMinimizerPlusPlatform();
     FlutterAppMinimizerPlusPlatform.instance = fakePlatform;
 
     expect(await flutterAppMinimizerPlusPlugin.getPlatformVersion(), '42');

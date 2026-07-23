@@ -47,10 +47,10 @@ All notable changes to the `flutter_app_minimizer_plus` plugin will be documente
 
 ---
 
-## [1.0.3-dev.1] - 2026-07-15
+## [1.0.3] - 2026-07-23
 
 ### Changed
-- Published a dev prerelease for testing the built-in Kotlin migration on pub.dev.
+- Promoted the built-in Kotlin migration to a stable pub.dev release.
 - Migrated the plugin and example app Android Gradle setup to use built-in Kotlin for Flutter 3.44+ compatibility.
 - Raised the minimum supported Flutter and Dart SDK versions to align with the built-in Kotlin migration guidance.
 - Updated the example app to AGP 9.0.1 and Gradle 9.1.0 so built-in Kotlin is enabled without applying KGP.
