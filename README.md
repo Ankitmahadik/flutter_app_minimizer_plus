@@ -22,7 +22,7 @@ Add the following to your `pubspec.yaml` file:
 
 ```yaml
 dependencies:
-  flutter_app_minimizer_plus: ^1.0.0
+  flutter_app_minimizer_plus: ^1.0.3
 ```
 
 Then, run:
